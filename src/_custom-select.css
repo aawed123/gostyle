@@ -1,0 +1,129 @@
+/*
+  Custom select (styled dropdown list).
+  HTML:
+  <div class="gs-custom-select" data-gs-select>
+    <button type="button" class="gs-custom-select-trigger">
+      <span class="gs-custom-select-value">Photoshop</span>
+      <span class="gs-custom-select-arrow"></span>
+    </button>
+    <ul class="gs-custom-select-menu">
+      <li class="gs-option" data-value="figma">Figma</li>
+      <li class="gs-option gs-active" data-value="photoshop">Photoshop</li>
+    </ul>
+    <input type="hidden" name="tool" value="photoshop">
+  </div>
+*/
+.gs-custom-select {
+  --gs-select-accent: var(--gs-menu-border, #a5b4fc);  /* border color when open */
+  --gs-select-radius: var(--gs-field-radius);
+  position: relative;
+  width: 100%;
+}
+
+.gs-custom-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  width: 100%;
+  padding: var(--gs-field-pad);
+  font-family: var(--gs-font);
+  font-size: var(--gs-field-size);
+  font-weight: var(--gs-field-weight);
+  line-height: 1.5;
+  text-align: left;
+  color: var(--gs-dark);
+  background: #fff;
+  border: 1px solid var(--gs-field-border);
+  border-radius: var(--gs-select-radius);
+  cursor: pointer;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.gs-custom-select-trigger:hover { border-color: var(--gs-select-accent); }
+.gs-custom-select-trigger:focus-visible { outline: 0; border-color: var(--gs-select-accent); box-shadow: 0 0 0 3px var(--gs-focus); }
+
+/* chevron */
+.gs-custom-select-arrow {
+  flex-shrink: 0;
+  width: .5rem;
+  height: .5rem;
+  margin-top: -.25rem;
+  border-right: 2px solid var(--gs-dark);
+  border-bottom: 2px solid var(--gs-dark);
+  transform: rotate(45deg);
+  transition: transform .2s ease, margin .2s ease;
+}
+.gs-custom-select.gs-open .gs-custom-select-arrow { margin-top: .2rem; transform: rotate(225deg); }
+
+/* open state: trigger + list look like one rounded box */
+.gs-custom-select.gs-open .gs-custom-select-trigger {
+  border-color: var(--gs-select-accent);
+  border-bottom-color: var(--gs-border);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.gs-custom-select-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  max-height: 11rem;                /* about 4.5 rows -> hints that the list scrolls */
+  margin: -1px 0 0;
+  padding: .25rem 0;
+  list-style: none;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid var(--gs-select-accent);
+  border-top: 0;
+  border-radius: 0 0 var(--gs-select-radius) var(--gs-select-radius);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, .12);
+  scrollbar-width: thin;
+  scrollbar-color: var(--gs-dark) transparent;
+}
+.gs-custom-select.gs-open .gs-custom-select-menu { display: block; }
+
+/* slim dark scrollbar (Chrome, Edge, Safari) */
+.gs-custom-select-menu::-webkit-scrollbar { width: 6px; }
+.gs-custom-select-menu::-webkit-scrollbar-track { background: transparent; }
+.gs-custom-select-menu::-webkit-scrollbar-thumb { background: var(--gs-dark); border-radius: 9999px; }
+
+.gs-option {
+  padding: .6rem 1rem;
+  font-size: .9rem;
+  color: #475569;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+.gs-option:hover, .gs-option.gs-highlight { background: #f1f5f9; }
+.gs-option.gs-active { color: var(--gs-dark); background: #eef2ff; }
+.gs-option.gs-disabled { color: #cbd5e1; pointer-events: none; }
+
+/* sizes & states */
+.gs-custom-select-sm .gs-custom-select-trigger { padding: .25rem .75rem; font-size: .85rem; }
+.gs-custom-select-lg .gs-custom-select-trigger { padding: .75rem 1.25rem; font-size: 1.05rem; }
+.gs-custom-select-error .gs-custom-select-trigger { border-color: var(--gs-danger); }
+.gs-custom-select-success .gs-custom-select-trigger { border-color: var(--gs-success); }
+.gs-custom-select-trigger:disabled { background: #f1f5f9; opacity: .7; cursor: not-allowed; }
+.gs-option-group { padding: .5rem 1rem .25rem; font-size: .75rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--gs-muted); }
+
+/* the real <select> stays in the page (forms, validation, change events) but is hidden */
+.gs-select-native {
+  position: absolute !important;
+  left: 0;
+  bottom: 0;
+  width: 100% !important;
+  height: 1px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* let the open list escape cards and accordions that use overflow:hidden */
+.gs-card:has(.gs-custom-select.gs-open),
+.gs-accordion:has(.gs-custom-select.gs-open),
+.gs-accordion-item:has(.gs-custom-select.gs-open) { overflow: visible; }

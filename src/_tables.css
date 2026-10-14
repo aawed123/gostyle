@@ -1,0 +1,35 @@
+.gs-table { width: 100%; margin-bottom: 1rem; border-collapse: separate; border-spacing: 0; font-size: .95rem; color: #334155; }
+.gs-table th, .gs-table td { padding: .85rem 1rem; text-align: left; vertical-align: middle; border-bottom: 1px solid #eef0f6; }
+.gs-table thead th {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--gs-muted);
+  border-bottom: 2px solid #e2e6f5;
+}
+.gs-table tbody tr:last-child td { border-bottom: 0; }
+.gs-table td { transition: background .2s ease; }
+
+/* floating row highlight */
+.gs-table-hover tbody tr:hover td { background: #f3f4ff; }
+.gs-table-hover tbody tr:hover td:first-child, .gs-table-striped tbody tr:nth-child(odd) td:first-child { border-top-left-radius: 14px; border-bottom-left-radius: 14px; }
+.gs-table-hover tbody tr:hover td:last-child, .gs-table-striped tbody tr:nth-child(odd) td:last-child { border-top-right-radius: 14px; border-bottom-right-radius: 14px; }
+.gs-table-striped tbody tr:nth-child(odd) td { background: #f8f9ff; border-bottom-color: transparent; }
+.gs-table-striped.gs-table-hover tbody tr:hover td { background: #eef0ff; }
+
+/* every row is its own rounded card */
+.gs-table-cards { border-spacing: 0 .55rem; }
+.gs-table-cards thead th { border-bottom: 0; padding-bottom: .25rem; }
+.gs-table-cards tbody td { background: #fff; border-top: 1px solid #eceef5; border-bottom: 1px solid #eceef5; }
+.gs-table-cards tbody td:first-child { border-left: 1px solid #eceef5; border-radius: 16px 0 0 16px; }
+.gs-table-cards tbody td:last-child { border-right: 1px solid #eceef5; border-radius: 0 16px 16px 0; }
+.gs-table-cards tbody tr:hover td { background: #f8f9ff; border-color: #d9defa; }
+.gs-table-cards tbody tr:last-child td { border-bottom: 1px solid #eceef5; }
+.gs-table-cards tbody tr:hover:last-child td { border-bottom-color: #d9defa; }
+
+.gs-table-bordered { border-collapse: collapse; }
+.gs-table-bordered th, .gs-table-bordered td { border: 1px solid #e2e6f5; }
+.gs-table-bordered tbody tr:last-child td { border-bottom: 1px solid #e2e6f5; }
+.gs-table-sm th, .gs-table-sm td { padding: .4rem .65rem; }
+.gs-table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }

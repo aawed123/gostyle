@@ -1,0 +1,24 @@
+.gs-pagination { display: flex; flex-wrap: wrap; gap: .35rem; margin: 0 0 1rem; padding: 0; list-style: none; }
+.gs-page-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.35rem;
+  height: 2.35rem;
+  padding: 0 .65rem;
+  font-size: .9rem;
+  font-weight: 500;
+  color: #475569;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s var(--gs-ease);
+}
+.gs-page-link:hover { color: var(--gs-primary); background: #eef0ff; transform: translateY(-1px); }
+.gs-page-item.gs-active .gs-page-link { font-weight: 700; color: #fff; background: var(--gs-gradient); box-shadow: 0 8px 18px rgba(79, 70, 229, .35); transform: none; }
+.gs-page-item.gs-disabled .gs-page-link { color: #cbd5e1; pointer-events: none; }
+.gs-pagination-sm .gs-page-link { min-width: 1.9rem; height: 1.9rem; font-size: .8rem; }
+.gs-pagination-lg .gs-page-link { min-width: 2.9rem; height: 2.9rem; font-size: 1rem; }
+.gs-pagination-center { justify-content: center; }
+.gs-pagination-outline .gs-page-link { border-color: #e2e6f5; }

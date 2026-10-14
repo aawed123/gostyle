@@ -1,0 +1,67 @@
+/* tones shared by alerts, badges, chips and toasts */
+.gs-alert, .gs-badge, .gs-chip, .gs-toast {
+  --gs-tone: #64748b; --gs-tone-bg: #f1f5f9; --gs-tone-border: #e2e8f0; --gs-tone-text: #334155;
+}
+.gs-alert-primary, .gs-badge-primary, .gs-chip-primary, .gs-toast-primary { --gs-tone: #4f46e5; --gs-tone-bg: #eef0ff; --gs-tone-border: #e0e4ff; --gs-tone-text: #3730a3; }
+.gs-alert-secondary, .gs-badge-secondary, .gs-chip-secondary, .gs-toast-secondary { --gs-tone: #64748b; --gs-tone-bg: #f1f5f9; --gs-tone-border: #e2e8f0; --gs-tone-text: #334155; }
+.gs-alert-success, .gs-badge-success, .gs-chip-success, .gs-toast-success { --gs-tone: #16a34a; --gs-tone-bg: #ecfdf3; --gs-tone-border: #d3f5e1; --gs-tone-text: #14633a; }
+.gs-alert-danger, .gs-badge-danger, .gs-chip-danger, .gs-toast-danger { --gs-tone: #e11d48; --gs-tone-bg: #fff1f3; --gs-tone-border: #ffdce2; --gs-tone-text: #9f1239; }
+.gs-alert-warning, .gs-badge-warning, .gs-chip-warning, .gs-toast-warning { --gs-tone: #f59e0b; --gs-tone-bg: #fffaeb; --gs-tone-border: #fdecc0; --gs-tone-text: #92560a; }
+.gs-alert-info, .gs-badge-info, .gs-chip-info, .gs-toast-info { --gs-tone: #0ea5e9; --gs-tone-bg: #effaff; --gs-tone-border: #d3effc; --gs-tone-text: #0b5f87; }
+
+/* alert: tinted card with a round icon */
+.gs-alert {
+  position: relative;
+  margin-bottom: 1rem;
+  padding: .9rem 1.2rem .9rem 3.4rem;
+  color: var(--gs-tone-text);
+  background: var(--gs-tone-bg);
+  border: 1px solid var(--gs-tone-border);
+  border-radius: 18px;
+}
+.gs-alert::before {
+  content: "i";
+  position: absolute;
+  left: 1.05rem;
+  top: .85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  font-size: .8rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--gs-tone);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--gs-tone-border);
+}
+.gs-alert-success::before { content: "\2713"; }
+.gs-alert-danger::before, .gs-alert-warning::before { content: "!"; }
+.gs-alert-dismissible { padding-right: 3rem; }
+.gs-alert-dismissible .gs-close { position: absolute; top: .65rem; right: .75rem; }
+
+/* badge: soft pill with a dot */
+.gs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .2rem .7rem;
+  font-size: .75rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--gs-tone-text);
+  vertical-align: middle;
+  background: var(--gs-tone-bg);
+  border: 1px solid var(--gs-tone-border);
+  border-radius: 9999px;
+}
+.gs-badge::before { content: ""; width: .42rem; height: .42rem; background: var(--gs-tone); border-radius: 50%; }
+.gs-badge-plain::before { display: none; }
+.gs-badge-square { border-radius: 8px; }
+.gs-badge-solid { color: #fff; background: var(--gs-tone); border-color: transparent; }
+.gs-badge-solid::before { background: #fff; }
+.gs-badge-gradient { color: #fff; background: var(--gs-gradient); border-color: transparent; }
+.gs-badge-gradient::before { background: #fff; }
+.gs-badge-dark { --gs-tone: #94a3b8; --gs-tone-bg: #0f172a; --gs-tone-border: #0f172a; --gs-tone-text: #fff; }
+.gs-badge-light { --gs-tone: #94a3b8; --gs-tone-bg: #fff; --gs-tone-border: #e2e6f5; --gs-tone-text: #475569; }

@@ -1,0 +1,100 @@
+/* ---------- chip ---------- */
+.gs-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .25rem .8rem;
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--gs-tone-text);
+  background: var(--gs-tone-bg);
+  border: 1px solid var(--gs-tone-border);
+  border-radius: 9999px;
+}
+.gs-chip .gs-close { width: 1.3rem; height: 1.3rem; margin-right: -.4rem; font-size: 1rem; }
+
+/* ---------- stepper ---------- */
+.gs-stepper { display: flex; margin: 0 0 1.5rem; padding: 0; list-style: none; counter-reset: gs-step; }
+.gs-step { position: relative; flex: 1; display: flex; flex-direction: column; align-items: center; font-size: .85rem; text-align: center; color: var(--gs-muted); counter-increment: gs-step; }
+.gs-step::before {
+  content: counter(gs-step);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  margin-bottom: .45rem;
+  font-weight: 700;
+  color: var(--gs-muted);
+  background: #fff;
+  border: 2px solid #dfe3f3;
+  border-radius: 50%;
+  transition: all .3s var(--gs-ease);
+}
+.gs-step::after { content: ""; position: absolute; top: 1.05rem; left: calc(50% + 1.35rem); right: calc(-50% + 1.35rem); height: 2px; background: #dfe3f3; }
+.gs-step:last-child::after { display: none; }
+.gs-step.gs-done::before { content: "\2713"; color: #fff; background: var(--gs-primary); border-color: var(--gs-primary); }
+.gs-step.gs-done::after { background: var(--gs-primary); }
+.gs-step.gs-active { font-weight: 600; color: var(--gs-dark); }
+.gs-step.gs-active::before { color: #fff; background: var(--gs-gradient); border-color: transparent; box-shadow: 0 0 0 5px var(--gs-focus); }
+
+/* ---------- timeline ---------- */
+.gs-timeline { position: relative; margin: 0 0 1rem; padding: 0 0 0 1.9rem; list-style: none; }
+.gs-timeline::before { content: ""; position: absolute; left: .5rem; top: .6rem; bottom: .6rem; width: 2px; background: linear-gradient(#c7d2fe, #e9d5ff); border-radius: 2px; }
+.gs-timeline-item { position: relative; padding-bottom: 1.3rem; }
+.gs-timeline-item:last-child { padding-bottom: 0; }
+.gs-timeline-item::before { content: ""; position: absolute; left: -1.9rem; top: .3rem; width: 1rem; height: 1rem; background: #fff; border: 3px solid var(--gs-primary); border-radius: 50%; box-shadow: 0 0 0 4px #fff; }
+.gs-timeline-item.gs-done::before { background: var(--gs-primary); }
+.gs-timeline-time { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--gs-muted); }
+.gs-timeline-title { margin: 0 0 .15rem; font-size: 1rem; font-weight: 700; }
+.gs-timeline-text { margin: 0; font-size: .9rem; }
+
+/* ---------- skeleton loader ---------- */
+.gs-skeleton {
+  display: block;
+  min-height: 1rem;
+  background: linear-gradient(90deg, #eceef8 25%, #f7f8fd 37%, #eceef8 63%);
+  background-size: 400% 100%;
+  border-radius: 8px;
+  animation: gs-shimmer 1.4s ease infinite;
+}
+.gs-skeleton-text { height: .8rem; margin-bottom: .55rem; }
+.gs-skeleton-circle { width: 2.75rem; height: 2.75rem; border-radius: 50%; }
+@keyframes gs-shimmer { 0% { background-position: 100% 50%; } 100% { background-position: 0 50%; } }
+
+/* ---------- toast (use goStyle.toast("Saved", "success") or data-gs-toggle="toast") ---------- */
+.gs-toast-container { position: fixed; right: 1rem; bottom: 1rem; z-index: 1200; display: flex; flex-direction: column; gap: .6rem; width: min(22rem, calc(100vw - 2rem)); }
+.gs-toast {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  padding: .8rem .8rem .8rem 1.1rem;
+  color: var(--gs-dark);
+  background: #fff;
+  border: 1px solid #eceef5;
+  border-radius: 18px;
+  box-shadow: var(--gs-shadow-lg);
+  animation: gs-toast-in .45s var(--gs-ease);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.gs-toast::before { content: ""; flex-shrink: 0; width: .65rem; height: .65rem; background: var(--gs-tone); border-radius: 50%; box-shadow: 0 0 0 5px var(--gs-tone-bg); }
+.gs-toast-text { flex: 1; font-size: .9rem; font-weight: 500; }
+.gs-toast.gs-leaving { opacity: 0; transform: translateX(24px); }
+@keyframes gs-toast-in { from { opacity: 0; transform: translateX(30px) scale(.96); } to { opacity: 1; transform: none; } }
+
+/* ---------- empty state ---------- */
+.gs-empty { padding: 2.5rem 1.5rem; text-align: center; color: var(--gs-muted); background: #fbfbff; border: 2px dashed #dfe3f3; border-radius: var(--gs-radius-lg); }
+.gs-empty-icon { display: inline-flex; align-items: center; justify-content: center; width: 3.5rem; height: 3.5rem; margin-bottom: .75rem; font-size: 1.5rem; color: #fff; background: var(--gs-gradient); border-radius: 18px; box-shadow: 0 12px 24px rgba(79, 70, 229, .3); }
+.gs-empty-title { margin: 0 0 .25rem; font-size: 1.1rem; font-weight: 700; color: var(--gs-dark); }
+
+/* ---------- typography extras ---------- */
+.gs-blockquote { margin: 0 0 1rem; padding: .9rem 1.4rem; font-size: 1.05rem; color: #334155; background: linear-gradient(90deg, #f3f4ff, transparent); border-left: 4px solid var(--gs-primary); border-radius: 0 16px 16px 0; }
+.gs-blockquote cite { display: block; margin-top: .4rem; font-size: .85rem; font-style: normal; font-weight: 600; color: var(--gs-muted); }
+.gs-kbd { display: inline-block; padding: .1rem .5rem; font-family: var(--gs-font); font-size: .78rem; font-weight: 600; color: var(--gs-dark); background: #fff; border: 1px solid #dfe3f3; border-bottom-width: 3px; border-radius: 8px; }
+.gs-code { padding: .1rem .45rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .85em; color: #7c3aed; background: #f5f3ff; border-radius: 8px; }
+.gs-pre { margin: 0 0 1rem; padding: 1rem 1.25rem; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .85rem; line-height: 1.6; color: #e2e8f0; background: #0f172a; border-radius: 18px; }
+.gs-lead { font-size: 1.15rem; color: #475569; }
+.gs-eyebrow { display: inline-block; margin-bottom: .5rem; font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gs-primary); }

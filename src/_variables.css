@@ -1,0 +1,35 @@
+:root {
+  --gs-primary: #4f46e5;
+  --gs-secondary: #64748b;
+  --gs-success: #16a34a;
+  --gs-danger: #dc2626;
+  --gs-info: #0284c7;
+  --gs-warning: #d97706;
+  --gs-muted: #64748b;
+  --gs-border: #e2e8f0;
+  --gs-focus: rgba(79, 70, 229, .25);
+  --gs-menu-border: #a5b4fc;   /* border of dropdown lists & custom select */
+  /* one look for every form field (input, textarea, select, dropdown, file...) */
+  --gs-field-radius: calc(var(--gs-radius) * 1.5);
+  --gs-field-border: #cbd5e1;
+  --gs-field-pad: .5rem 1rem;
+  --gs-field-size: .95rem;
+  --gs-field-weight: 500;
+  --gs-check-size: .825rem;   /* checkbox, radio (the switch scales with it) */
+  --gs-check-color: var(--gs-dark);   /* color when checked / on */
+  /* design tokens used by the components */
+  --gs-accent: #9333ea;
+  --gs-gradient: linear-gradient(135deg, var(--gs-primary) 0%, var(--gs-accent) 100%);
+  --gs-radius-lg: calc(var(--gs-radius) * 2.5);
+  --gs-shadow-sm: 0 1px 2px rgba(15, 23, 42, .04), 0 6px 16px rgba(15, 23, 42, .05);
+  --gs-shadow-md: 0 2px 4px rgba(15, 23, 42, .04), 0 14px 32px rgba(79, 70, 229, .12);
+  --gs-shadow-lg: 0 30px 70px rgba(30, 27, 75, .28);
+  --gs-ease: cubic-bezier(.2, .8, .2, 1);
+  --gs-light: #f6f7fc;
+  --gs-dark: #0f172a;
+  --gs-radius: 8px;
+  --gs-space: 1rem;
+  --gs-space-unit: 4px;   /* p-1, m-1, gap-1 ... = 4px each step */
+  --gs-radius-unit: 4px;  /* b-radius-1 = 4px, 2 = 8px ... */
+  --gs-font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}

@@ -1,0 +1,41 @@
+.gs-accordion { display: flex; flex-direction: column; gap: .6rem; margin-bottom: 1rem; }
+.gs-accordion-item {
+  background: #fff;
+  border: 1px solid #eceef5;
+  border-radius: 18px;
+  box-shadow: var(--gs-shadow-sm);
+  overflow: hidden;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+.gs-accordion-item:hover { border-color: #d9defa; }
+.gs-accordion-item[open] { border-color: var(--gs-menu-border); box-shadow: var(--gs-shadow-md); }
+.gs-accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+.gs-accordion-header::-webkit-details-marker { display: none; }
+.gs-accordion-header::after {
+  content: "+";
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--gs-primary);
+  background: #eef0ff;
+  border-radius: 50%;
+  transition: transform .3s var(--gs-ease), background .25s ease, color .25s ease;
+}
+.gs-accordion-item[open] > .gs-accordion-header::after { color: #fff; background: var(--gs-gradient); transform: rotate(135deg); }
+.gs-accordion-body { padding: 0 1.25rem 1.1rem; color: #475569; animation: gs-fade-up .3s var(--gs-ease); }

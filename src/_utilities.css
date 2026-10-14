@@ -1,0 +1,15 @@
+.gs-text-center { text-align: center; }
+.gs-text-left { text-align: left; }
+.gs-text-right { text-align: right; }
+.gs-hidden { display: none !important; }
+.gs-block { display: block; }
+.gs-inline-block { display: inline-block; }
+.gs-flex { display: flex; }
+.gs-flex-column { flex-direction: column; }
+.gs-flex-wrap { flex-wrap: wrap; }
+.gs-justify-center { justify-content: center; }
+.gs-justify-between { justify-content: space-between; }
+.gs-align-center { align-items: center; }
+.gs-overflow-visible { overflow: visible !important; }
+.gs-overflow-hidden { overflow: hidden !important; }
+.gs-overflow-auto { overflow: auto !important; }

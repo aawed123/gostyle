@@ -1,0 +1,185 @@
+.gs-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--gs-muted);
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, transform .25s var(--gs-ease);
+}
+.gs-close:hover { color: var(--gs-dark); background: rgba(15, 23, 42, .07); transform: rotate(90deg); }
+
+/* divider fades out at both ends */
+.gs-divider { height: 1px; margin: 1.5rem 0; border: 0; background: linear-gradient(90deg, transparent, #d5daf0 20%, #d5daf0 80%, transparent); }
+
+/* avatar */
+.gs-avatar {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: .85rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--gs-gradient);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--gs-menu-border);
+}
+.gs-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.gs-avatar-sm { width: 1.85rem; height: 1.85rem; font-size: .7rem; }
+.gs-avatar-lg { width: 3.6rem; height: 3.6rem; font-size: 1.15rem; }
+.gs-avatar-xl { width: 5rem; height: 5rem; font-size: 1.5rem; }
+.gs-avatar-online::after { content: ""; position: absolute; right: 0; bottom: 0; width: 28%; height: 28%; min-width: .5rem; min-height: .5rem; background: #22c55e; border: 2px solid #fff; border-radius: 50%; }
+.gs-avatar-group { display: inline-flex; }
+.gs-avatar-group .gs-avatar { margin-left: -.5rem; box-shadow: 0 0 0 3px #fff; }
+.gs-avatar-group .gs-avatar:first-child { margin-left: 0; }
+
+/* ---------------------------------------------------------------
+   Tooltip
+   1) simple (text only):
+        <span data-gs-tooltip="Short text">Hover me</span>
+        add data-gs-tooltip-pos="bottom" to open it below
+   2) rich (text + action button):
+        <span class="gs-tooltip">
+          <button class="gs-btn">Hover me</button>
+          <span class="gs-tooltip-box" role="tooltip">
+            <span class="gs-tooltip-content">
+              Some helpful text
+              <a href="#" class="gs-tooltip-action">Learn More</a>
+            </span>
+          </span>
+        </span>
+        add the class gs-tooltip-bottom to the wrapper to open it below
+--------------------------------------------------------------- */
+[data-gs-tooltip] { position: relative; }
+[data-gs-tooltip]::after {
+  content: attr(data-gs-tooltip);
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  z-index: 1100;
+  width: max-content;
+  max-width: 16rem;
+  padding: .65rem .95rem;
+  font-size: .85rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  white-space: normal;
+  color: #f1f5f9;
+  background: var(--gs-dark);
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, .28);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 6px) scale(.97);
+  transition: opacity .18s ease, transform .22s var(--gs-ease), visibility .18s;
+}
+[data-gs-tooltip]::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  z-index: 1100;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  background: var(--gs-dark);
+  border-radius: 0 0 3px 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(6px) rotate(45deg);
+  transition: opacity .18s ease, transform .22s var(--gs-ease), visibility .18s;
+}
+[data-gs-tooltip]:hover::after, [data-gs-tooltip]:focus-visible::after { opacity: 1; visibility: visible; transform: translate(-50%, 0) scale(1); }
+[data-gs-tooltip]:hover::before, [data-gs-tooltip]:focus-visible::before { opacity: 1; visibility: visible; transform: rotate(45deg); }
+
+[data-gs-tooltip-pos="bottom"]::after { bottom: auto; top: calc(100% + 12px); transform: translate(-50%, -6px) scale(.97); }
+[data-gs-tooltip-pos="bottom"]::before { bottom: auto; top: calc(100% + 6px); border-radius: 3px 0 0 0; transform: translateY(-6px) rotate(45deg); }
+[data-gs-tooltip-pos="bottom"]:hover::after, [data-gs-tooltip-pos="bottom"]:focus-visible::after { transform: translate(-50%, 0) scale(1); }
+[data-gs-tooltip-pos="bottom"]:hover::before, [data-gs-tooltip-pos="bottom"]:focus-visible::before { transform: rotate(45deg); }
+
+/* rich tooltip: stays open while the pointer is on the bubble, so the button can be clicked */
+.gs-tooltip { position: relative; display: inline-block; }
+.gs-tooltip-box {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  z-index: 1100;
+  display: block;
+  padding-bottom: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(6px);
+  transition: opacity .18s ease, transform .22s var(--gs-ease), visibility .18s;
+}
+.gs-tooltip:hover .gs-tooltip-box, .gs-tooltip:focus-within .gs-tooltip-box { opacity: 1; visibility: visible; transform: translateX(-50%); }
+.gs-tooltip-content {
+  position: relative;
+  display: block;
+  width: max-content;
+  min-width: 13rem;
+  max-width: 17rem;
+  padding: 1rem;
+  font-size: .95rem;
+  font-weight: 500;
+  line-height: 1.45;
+  text-align: center;
+  color: #f1f5f9;
+  background: var(--gs-dark);
+  border-radius: 20px;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, .3);
+}
+.gs-tooltip-content::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  background: var(--gs-dark);
+  border-radius: 0 0 4px 0;
+  transform: rotate(45deg);
+}
+.gs-tooltip-action {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: .75rem;
+  padding: .6rem 2.5rem;
+  font-size: .95rem;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255, 255, 255, .14);
+  border-radius: 12px;
+  transition: background .2s ease;
+}
+.gs-tooltip-action:hover { color: #fff; background: rgba(255, 255, 255, .24); }
+.gs-tooltip-action::after {
+  content: "";
+  position: absolute;
+  right: .9rem;
+  top: 50%;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-top: -.525rem;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23cbd5e1'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M18%2013v6a2%202%200%200%201-2%202H5a2%202%200%200%201-2-2V8a2%202%200%200%201%202-2h6'/%3E%3Cpath%20d='M15%203h6v6'/%3E%3Cpath%20d='M10%2014L21%203'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.gs-tooltip-bottom .gs-tooltip-box { bottom: auto; top: 100%; padding: 14px 0 0; transform: translateX(-50%) translateY(-6px); }
+.gs-tooltip-bottom .gs-tooltip-content::after { bottom: auto; top: -6px; border-radius: 4px 0 0 0; }
+.gs-tooltip-bottom:hover .gs-tooltip-box, .gs-tooltip-bottom:focus-within .gs-tooltip-box { transform: translateX(-50%); }

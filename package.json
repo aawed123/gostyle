@@ -1,0 +1,11 @@
+{
+  "name": "gostyle",
+  "version": "0.1.0",
+  "description": "goStyle - a lightweight CSS framework",
+  "main": "dist/gostyle.css",
+  "style": "dist/gostyle.min.css",
+  "files": ["dist", "src"],
+  "scripts": { "generate": "node generate.js", "build": "node generate.js && node build.js" },
+  "keywords": ["css", "framework", "styles", "gostyle"],
+  "license": "MIT"
+}

@@ -1,0 +1,18 @@
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--gs-font);
+  line-height: 1.55;
+  color: var(--gs-dark);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5, h6 { margin: 0 0 .5rem; font-weight: 700; line-height: 1.2; letter-spacing: -.02em; }
+h1 { font-size: 2.25rem; font-weight: 800; letter-spacing: -.03em; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.25rem; }
+p { margin: 0 0 1rem; color: #475569; }
+a { color: var(--gs-primary); text-decoration-color: rgba(79, 70, 229, .35); text-decoration-thickness: 1.5px; text-underline-offset: .2em; transition: color .2s ease, text-decoration-color .2s ease; }
+a:hover { color: var(--gs-accent); text-decoration-color: currentColor; }
+img { max-width: 100%; height: auto; }
+::selection { color: var(--gs-dark); background: #ddd6fe; }

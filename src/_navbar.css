@@ -1,0 +1,70 @@
+.gs-navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem 1rem;
+  margin: .75rem;
+  padding: .45rem .5rem .45rem 1.4rem;
+  background: rgba(255, 255, 255, .82);
+  border: 1px solid #eceef5;
+  border-radius: 9999px;
+  box-shadow: var(--gs-shadow-sm);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+.gs-navbar-sticky { position: sticky; top: .75rem; z-index: 900; }
+.gs-navbar-brand {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  text-decoration: none;
+  background: var(--gs-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.gs-navbar-menu { display: flex; align-items: center; gap: .2rem; margin-left: auto; }
+.gs-nav-link {
+  padding: .5rem 1rem;
+  font-size: .92rem;
+  font-weight: 500;
+  color: #64748b;
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: color .2s ease, background .2s ease;
+}
+.gs-nav-link:hover { color: var(--gs-dark); background: #f1f3fb; }
+.gs-nav-link.gs-active { font-weight: 600; color: var(--gs-primary); background: #eef0ff; }
+.gs-nav-link.gs-disabled { color: #cbd5e1; pointer-events: none; }
+
+.gs-navbar-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-left: auto;
+  font-size: 1.15rem;
+  line-height: 1;
+  color: inherit;
+  background: transparent;
+  border: 1px solid #e2e6f5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* dark navbar */
+.gs-navbar-dark { color: #fff; background: rgba(15, 23, 42, .92); border-color: #1e293b; box-shadow: 0 16px 36px rgba(15, 23, 42, .3); }
+.gs-navbar-dark .gs-nav-link { color: #94a3b8; }
+.gs-navbar-dark .gs-nav-link:hover { color: #fff; background: rgba(255, 255, 255, .08); }
+.gs-navbar-dark .gs-nav-link.gs-active { color: #fff; background: rgba(255, 255, 255, .14); }
+.gs-navbar-dark .gs-navbar-toggle { border-color: rgba(255, 255, 255, .25); }
+.gs-navbar-dark .gs-navbar-brand { background: linear-gradient(135deg, #a5b4fc, #f0abfc); -webkit-background-clip: text; background-clip: text; }
+
+@media (max-width: 768px) {
+  .gs-navbar { border-radius: 1.5rem; padding-left: 1.1rem; }
+  .gs-navbar-toggle { display: inline-flex; }
+  .gs-navbar-menu { display: none; flex-direction: column; align-items: stretch; width: 100%; margin-left: 0; padding-bottom: .4rem; }
+  .gs-navbar-menu.gs-open { display: flex; }
+}

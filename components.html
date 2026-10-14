@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>goStyle Components</title>
+  <link rel="stylesheet" href="dist/gostyle.min.css">
+</head>
+<body class="gs-bg-light">
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="gs-navbar gs-navbar-dark gs-navbar-sticky">
+    <a href="#" class="gs-navbar-brand">goStyle</a>
+    <button class="gs-navbar-toggle" data-gs-toggle="collapse" data-gs-target="#mainMenu" aria-label="Menu">&#9776;</button>
+    <div class="gs-navbar-menu" id="mainMenu">
+      <a href="#typography" class="gs-nav-link gs-active">Basics</a>
+      <a href="#cards" class="gs-nav-link">Cards</a>
+      <a href="#forms" class="gs-nav-link">Forms</a>
+      <a href="#data" class="gs-nav-link">Data</a>
+      <a href="#navigation" class="gs-nav-link">Navigation</a>
+      <a href="#feedback" class="gs-nav-link">Feedback</a>
+      <div class="gs-dropdown gs-dropdown-right">
+        <a href="#" class="gs-nav-link" data-gs-toggle="dropdown">More &#9662;</a>
+        <div class="gs-dropdown-menu">
+          <a href="#" class="gs-dropdown-item">Profile</a>
+          <a href="#" class="gs-dropdown-item">Settings</a>
+          <div class="gs-dropdown-divider"></div>
+          <a href="#" class="gs-dropdown-item">Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="gs-container gs-pb-12">
+
+    <!-- ============ HERO ============ -->
+    <header class="gs-py-10">
+      <span class="gs-eyebrow">goStyle v0.1</span>
+      <h1 style="font-size:3rem">A fresh look for <span class="gs-text-gradient">every element</span></h1>
+      <p class="gs-lead" style="max-width:36rem">Soft shadows, gradient accents, pill shapes and round corners. This page shows every component so you can check them in one place.</p>
+      <div class="gs-flex gs-align-center gs-gap-4 gs-flex-wrap">
+        <button class="gs-btn gs-btn-lg">Get started</button>
+        <button class="gs-btn-outline gs-btn-lg">Read the docs</button>
+        <div class="gs-avatar-group">
+          <span class="gs-avatar">AB</span><span class="gs-avatar">CD</span><span class="gs-avatar">EF</span><span class="gs-avatar">+4</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ TYPOGRAPHY ============ -->
+    <section id="typography" class="gs-mb-10">
+      <h2 class="gs-mb-4">Typography</h2>
+      <div class="gs-row">
+        <div class="gs-col-12 gs-col-md-6">
+          <h1>Heading 1</h1><h2>Heading 2</h2><h3>Heading 3</h3><h4>Heading 4</h4><h5>Heading 5</h5><h6>Heading 6</h6>
+        </div>
+        <div class="gs-col-12 gs-col-md-6">
+          <p>Body text with a <a href="#">regular link</a>. Press <span class="gs-kbd">Ctrl</span> + <span class="gs-kbd">K</span> to search, or use <span class="gs-code">.gs-p-4</span> for padding.</p>
+          <blockquote class="gs-blockquote">Good design is as little design as possible.<cite>Dieter Rams</cite></blockquote>
+          <pre class="gs-pre">&lt;button class="gs-btn"&gt;Save&lt;/button&gt;</pre>
+          <hr class="gs-divider">
+          <p class="gs-text-muted">Muted text &middot; <span class="gs-text-primary">primary</span> &middot; <span class="gs-text-success">success</span> &middot; <span class="gs-text-danger">danger</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BUTTONS ============ -->
+    <section class="gs-mb-10">
+      <h2 class="gs-mb-4">Buttons</h2>
+      <div class="gs-flex gs-flex-wrap gs-gap-2 gs-mb-3">
+        <button class="gs-btn">Primary</button><button class="gs-btn gs-btn-secondary">Secondary</button><button class="gs-btn gs-btn-success">Success</button>
+        <button class="gs-btn gs-btn-danger">Danger</button><button class="gs-btn gs-btn-info">Info</button><button class="gs-btn gs-btn-warning">Warning</button>
+        <button class="gs-btn gs-btn-dark">Dark</button><button class="gs-btn gs-btn-light">Light</button><button class="gs-btn" disabled>Disabled</button>
+      </div>
+      <div class="gs-flex gs-flex-wrap gs-gap-2 gs-mb-3">
+        <button class="gs-btn-outline">Primary</button><button class="gs-btn-outline gs-btn-secondary">Secondary</button><button class="gs-btn-outline gs-btn-success">Success</button>
+        <button class="gs-btn-outline gs-btn-danger">Danger</button><button class="gs-btn-outline gs-btn-info">Info</button><button class="gs-btn-outline gs-btn-warning">Warning</button>
+      </div>
+      <div class="gs-flex gs-align-center gs-gap-2">
+        <button class="gs-btn gs-btn-sm">Small</button><button class="gs-btn">Default</button><button class="gs-btn gs-btn-lg">Large</button>
+      </div>
+    </section>
+
+    <!-- ============ GRID ============ -->
+    <section class="gs-mb-10">
+      <h2 class="gs-mb-4">Responsive grid</h2>
+      <p>1 column on phones, 2 from md (768px), 4 from lg (992px).</p>
+      <div class="gs-row gs-mb-3">
+        <div class="gs-col-12 gs-col-md-6 gs-col-lg-3 gs-mb-2"><div class="gs-p-3 gs-bg-primary gs-text-white gs-b-radius-4">1</div></div>
+        <div class="gs-col-12 gs-col-md-6 gs-col-lg-3 gs-mb-2"><div class="gs-p-3 gs-bg-primary gs-text-white gs-b-radius-4">2</div></div>
+        <div class="gs-col-12 gs-col-md-6 gs-col-lg-3 gs-mb-2"><div class="gs-p-3 gs-bg-primary gs-text-white gs-b-radius-4">3</div></div>
+        <div class="gs-col-12 gs-col-md-6 gs-col-lg-3 gs-mb-2"><div class="gs-p-3 gs-bg-primary gs-text-white gs-b-radius-4">4</div></div>
+      </div>
+      <div class="gs-row">
+        <div class="gs-col-4 gs-offset-2"><div class="gs-p-3 gs-bg-success gs-text-white gs-b-radius-4">col-4 offset-2</div></div>
+        <div class="gs-col-auto"><div class="gs-p-3 gs-bg-success gs-text-white gs-b-radius-4">col-auto</div></div>
+        <div class="gs-col"><div class="gs-p-3 gs-bg-success gs-text-white gs-b-radius-4">col (fills the rest)</div></div>
+      </div>
+    </section>
+
+    <!-- ============ CARDS ============ -->
+    <section id="cards" class="gs-mb-10">
+      <h2 class="gs-mb-4">Cards</h2>
+      <div class="gs-row gs-mb-4">
+        <div class="gs-col-12 gs-col-md-4 gs-mb-4">
+          <div class="gs-card gs-card-lift">
+            <div class="gs-card-img"></div>
+            <div class="gs-card-body">
+              <h3 class="gs-card-title">Lift on hover</h3>
+              <p class="gs-card-subtitle">Image card</p>
+              <p class="gs-card-text">Soft border, layered shadow and rounded corners.</p>
+              <button class="gs-btn gs-btn-sm">Open</button>
+            </div>
+          </div>
+        </div>
+        <div class="gs-col-12 gs-col-md-4 gs-mb-4">
+          <div class="gs-card">
+            <div class="gs-card-header">Header and footer</div>
+            <div class="gs-card-body">
+              <p class="gs-card-text">Header and footer are optional parts of a card.</p>
+              <span class="gs-badge gs-badge-success">Live</span>
+            </div>
+            <div class="gs-card-footer">Updated today</div>
+          </div>
+        </div>
+        <div class="gs-col-12 gs-col-md-4 gs-mb-4">
+          <div class="gs-card gs-card-gradient">
+            <div class="gs-card-body">
+              <h3 class="gs-card-title">Gradient card</h3>
+              <p class="gs-card-text">Bold, colorful and perfect for highlights or calls to action.</p>
+              <button class="gs-btn gs-btn-light gs-btn-sm">Upgrade</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gs-row gs-mb-4">
+        <div class="gs-col-12 gs-col-md-4 gs-mb-4"><div class="gs-card gs-card-dark"><div class="gs-card-body"><h3 class="gs-card-title">Dark card</h3><p class="gs-card-text">For dashboards and night mode.</p></div></div></div>
+        <div class="gs-col-12 gs-col-md-4 gs-mb-4"><div class="gs-card gs-card-outline"><div class="gs-card-body"><h3 class="gs-card-title">Outline card</h3><p class="gs-card-text">Flat, no shadow, thicker border.</p></div></div></div>
+        <div class="gs-col-12 gs-col-md-4 gs-mb-4">
+          <div class="gs-p-5 gs-b-radius-10" style="background:linear-gradient(135deg,#a5b4fc,#f9a8d4,#fde68a)">
+            <div class="gs-card gs-card-glass"><div class="gs-card-body"><h3 class="gs-card-title">Glass card</h3><p class="gs-card-text">Frosted blur over a colorful background.</p></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="gs-row">
+        <div class="gs-col-12 gs-col-md-4 gs-mb-4"><div class="gs-card"><div class="gs-stat"><span class="gs-stat-label">Revenue</span><span class="gs-stat-value">$48.2k</span><span class="gs-stat-trend">&#9650; 12.5% this week</span></div></div></div>
+        <div class="gs-col-12 gs-col-md-4 gs-mb-4"><div class="gs-card"><div class="gs-stat"><span class="gs-stat-label">Users</span><span class="gs-stat-value">3,842</span><span class="gs-stat-trend gs-stat-trend-down">&#9660; 2.1% this week</span></div></div></div>
+        <div class="gs-col-12 gs-col-md-4 gs-mb-4"><div class="gs-card gs-card-gradient"><div class="gs-stat"><span class="gs-stat-label">Orders</span><span class="gs-stat-value">1,209</span><span class="gs-stat-trend">&#9650; 8.4% this week</span></div></div></div>
+      </div>
+    </section>
+
+    <!-- ============ UTILITIES ============ -->
+    <section class="gs-mb-10">
+      <h2 class="gs-mb-4">Utilities</h2>
+      <div class="gs-flex gs-flex-wrap gs-gap-3 gs-align-center gs-mb-3">
+        <div class="gs-p-2 gs-b-radius-1 gs-bg-primary gs-text-white">radius-1</div>
+        <div class="gs-p-3 gs-b-radius-2 gs-bg-primary gs-text-white">radius-2</div>
+        <div class="gs-p-4 gs-b-radius-3 gs-bg-primary gs-text-white">radius-3</div>
+        <div class="gs-p-5 gs-b-radius-5 gs-bg-primary gs-text-white">radius-5</div>
+        <div class="gs-p-4 gs-b-radius-full gs-bg-gradient gs-text-white">full</div>
+      </div>
+      <div class="gs-flex gs-flex-wrap gs-gap-4">
+        <div class="gs-p-4 gs-b-radius-4 gs-bg-white gs-shadow-1">shadow-1</div>
+        <div class="gs-p-4 gs-b-radius-4 gs-bg-white gs-shadow-2">shadow-2</div>
+        <div class="gs-p-4 gs-b-radius-4 gs-bg-white gs-shadow-3">shadow-3</div>
+        <div class="gs-p-4 gs-b-radius-4 gs-bg-white gs-b-width-2 gs-b-color-primary">border</div>
+      </div>
+    </section>
+
+    <!-- ============ FORMS ============ -->
+    <section id="forms" class="gs-mb-10">
+      <h2 class="gs-mb-4">Forms</h2>
+      <form class="gs-card gs-card-body">
+        <div class="gs-row">
+          <div class="gs-col-12 gs-col-md-6 gs-form-group">
+            <label class="gs-label" for="n">Name</label>
+            <input class="gs-input" id="n" type="text" placeholder="Your name">
+          </div>
+          <div class="gs-col-12 gs-col-md-6 gs-form-group">
+            <label class="gs-label" for="e">Email</label>
+            <input class="gs-input gs-input-error" id="e" type="email" value="wrong-email">
+            <span class="gs-form-error">Please enter a valid email.</span>
+          </div>
+        </div>
+        <div class="gs-row">
+          <div class="gs-col-12 gs-col-md-6 gs-form-group">
+            <label class="gs-label" for="c">Country (plain select, auto-styled)</label>
+            <select class="gs-select" id="c"><option>India</option><option>USA</option><option>UK</option></select>
+          </div>
+          <div class="gs-col-12 gs-col-md-6 gs-form-group">
+            <label class="gs-label">Website</label>
+            <div class="gs-input-group">
+              <span class="gs-input-text">https://</span>
+              <input class="gs-input" type="text" placeholder="example.com">
+              <button type="button" class="gs-btn">Go</button>
+            </div>
+          </div>
+        </div>
+        <div class="gs-row">
+          <div class="gs-col-12 gs-col-md-6 gs-form-group">
+            <label class="gs-label" for="f">Upload file</label>
+            <input class="gs-file" id="f" type="file">
+          </div>
+          <div class="gs-col-12 gs-col-md-6 gs-form-group">
+            <label class="gs-label" for="dis">Disabled field</label>
+            <input class="gs-input" id="dis" type="text" value="Cannot edit" disabled>
+          </div>
+        </div>
+        <div class="gs-form-group">
+          <label class="gs-label" for="m">Message</label>
+          <textarea class="gs-textarea" id="m" placeholder="Write something..."></textarea>
+          <span class="gs-form-text">Max 200 characters.</span>
+        </div>
+        <div class="gs-form-group gs-flex gs-gap-6 gs-flex-wrap">
+          <label class="gs-check"><input type="checkbox" checked> Remember me</label>
+          <label class="gs-check"><input type="radio" name="r" checked> Option A</label>
+          <label class="gs-check"><input type="radio" name="r"> Option B</label>
+          <label class="gs-switch"><input type="checkbox" checked><span class="gs-switch-slider"></span> Notifications</label>
+        </div>
+        <div class="gs-form-group"><label class="gs-label">Volume</label><input class="gs-range" type="range"></div>
+        <button type="submit" class="gs-btn">Send</button>
+      </form>
+
+      <h3 class="gs-mt-8 gs-mb-3">Dropdowns</h3>
+      <div class="gs-row">
+        <div class="gs-col-12 gs-col-md-6 gs-mb-4">
+          <label class="gs-label">Custom select</label>
+          <div class="gs-custom-select" data-gs-select>
+            <button type="button" class="gs-custom-select-trigger"><span class="gs-custom-select-value">Photoshop</span><span class="gs-custom-select-arrow"></span></button>
+            <ul class="gs-custom-select-menu">
+              <li class="gs-option" data-value="figma">Figma</li>
+              <li class="gs-option gs-active" data-value="photoshop">Photoshop</li>
+              <li class="gs-option" data-value="illustrator">Illustrator</li>
+              <li class="gs-option" data-value="indesign">In design</li>
+              <li class="gs-option" data-value="sketch">Sketch</li>
+              <li class="gs-option" data-value="canva">Canva</li>
+            </ul>
+            <input type="hidden" name="tool" value="photoshop">
+          </div>
+        </div>
+        <div class="gs-col-12 gs-col-md-6 gs-mb-4">
+          <label class="gs-label">Button dropdown menu</label><br>
+          <div class="gs-dropdown">
+            <button class="gs-btn" data-gs-toggle="dropdown">Actions &#9662;</button>
+            <div class="gs-dropdown-menu">
+              <a href="#" class="gs-dropdown-item">Edit</a><a href="#" class="gs-dropdown-item">Duplicate</a>
+              <div class="gs-dropdown-divider"></div><a href="#" class="gs-dropdown-item">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TABLES, LISTS ============ -->
+    <section id="data" class="gs-mb-10">
+      <h2 class="gs-mb-4">Tables</h2>
+      <div class="gs-card gs-p-3 gs-mb-4">
+        <div class="gs-table-responsive">
+          <table class="gs-table gs-table-striped gs-table-hover">
+            <thead><tr><th>Name</th><th>Role</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Asha</td><td>Designer</td><td><span class="gs-badge gs-badge-success">Active</span></td></tr>
+              <tr><td>Ravi</td><td>Developer</td><td><span class="gs-badge gs-badge-warning">Away</span></td></tr>
+              <tr><td>Meera</td><td>Manager</td><td><span class="gs-badge gs-badge-success">Active</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="gs-text-muted">Row cards variant (<span class="gs-code">gs-table-cards</span>)</p>
+      <div class="gs-table-responsive gs-mb-4">
+        <table class="gs-table gs-table-cards">
+          <thead><tr><th>Project</th><th>Owner</th><th>Progress</th></tr></thead>
+          <tbody>
+            <tr><td>Website</td><td>Asha</td><td>80%</td></tr>
+            <tr><td>Mobile app</td><td>Ravi</td><td>45%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="gs-mb-4 gs-mt-8">Lists &amp; menu</h2>
+      <div class="gs-row">
+        <div class="gs-col-12 gs-col-md-4 gs-mb-4">
+          <ul class="gs-list-group">
+            <li class="gs-list-group-item gs-active">Inbox</li>
+            <li><a href="#" class="gs-list-group-item">Drafts</a></li>
+            <li><a href="#" class="gs-list-group-item">Sent</a></li>
+            <li class="gs-list-group-item gs-disabled">Archive</li>
+          </ul>
+        </div>
+        <div class="gs-col-12 gs-col-md-4 gs-mb-4">
+          <ul class="gs-menu">
+            <li class="gs-menu-title">Account</li>
+            <li><a href="#" class="gs-menu-item gs-active">Profile</a></li>
+            <li><a href="#" class="gs-menu-item">Billing</a></li>
+            <li class="gs-menu-divider"></li>
+            <li><a href="#" class="gs-menu-item">Sign out</a></li>
+          </ul>
+        </div>
+        <div class="gs-col-12 gs-col-md-4 gs-mb-4">
+          <ul class="gs-list-check">
+            <li>Soft shadows</li><li>Gradient accents</li><li>Pill shapes</li><li>Fully responsive</li>
+          </ul>
+          <ul class="gs-list-inline"><li>Home</li><li>About</li><li>Contact</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NAVIGATION ============ -->
+    <section id="navigation" class="gs-mb-10">
+      <h2 class="gs-mb-4">Navigation</h2>
+      <ul class="gs-breadcrumb">
+        <li class="gs-breadcrumb-item"><a href="#">Home</a></li>
+        <li class="gs-breadcrumb-item"><a href="#">Library</a></li>
+        <li class="gs-breadcrumb-item gs-active">Components</li>
+      </ul>
+      <ul class="gs-pagination">
+        <li class="gs-page-item gs-disabled"><a class="gs-page-link" href="#">&laquo;</a></li>
+        <li class="gs-page-item gs-active"><a class="gs-page-link" href="#">1</a></li>
+        <li class="gs-page-item"><a class="gs-page-link" href="#">2</a></li>
+        <li class="gs-page-item"><a class="gs-page-link" href="#">3</a></li>
+        <li class="gs-page-item"><a class="gs-page-link" href="#">&raquo;</a></li>
+      </ul>
+
+      <h3 class="gs-mt-6 gs-mb-3">Tabs (segmented)</h3>
+      <div class="gs-tabs">
+        <div class="gs-tab-list">
+          <button class="gs-tab gs-active" data-gs-tab="#tab-one">Overview</button>
+          <button class="gs-tab" data-gs-tab="#tab-two">Details</button>
+          <button class="gs-tab" data-gs-tab="#tab-three">Reviews</button>
+        </div>
+        <div class="gs-tab-panel gs-active" id="tab-one"><p>Overview content.</p></div>
+        <div class="gs-tab-panel" id="tab-two"><p>Details content.</p></div>
+        <div class="gs-tab-panel" id="tab-three"><p>Reviews content.</p></div>
+      </div>
+      <h3 class="gs-mt-4 gs-mb-3">Tabs (pills)</h3>
+      <div class="gs-tabs gs-tabs-pills">
+        <div class="gs-tab-list">
+          <button class="gs-tab gs-active" data-gs-tab="#p-one">Design</button>
+          <button class="gs-tab" data-gs-tab="#p-two">Code</button>
+          <button class="gs-tab" data-gs-tab="#p-three">Launch</button>
+        </div>
+        <div class="gs-tab-panel gs-active" id="p-one"><p>Design panel.</p></div>
+        <div class="gs-tab-panel" id="p-two"><p>Code panel.</p></div>
+        <div class="gs-tab-panel" id="p-three"><p>Launch panel.</p></div>
+      </div>
+      <h3 class="gs-mt-4 gs-mb-3">Tabs (underline)</h3>
+      <div class="gs-tabs gs-tabs-line">
+        <div class="gs-tab-list">
+          <button class="gs-tab gs-active" data-gs-tab="#l-one">Account</button>
+          <button class="gs-tab" data-gs-tab="#l-two">Security</button>
+          <button class="gs-tab" data-gs-tab="#l-three">Billing</button>
+        </div>
+        <div class="gs-tab-panel gs-active" id="l-one"><p>Account settings.</p></div>
+        <div class="gs-tab-panel" id="l-two"><p>Security settings.</p></div>
+        <div class="gs-tab-panel" id="l-three"><p>Billing settings.</p></div>
+      </div>
+
+      <h3 class="gs-mt-6 gs-mb-4">Stepper</h3>
+      <ol class="gs-stepper">
+        <li class="gs-step gs-done">Cart</li><li class="gs-step gs-done">Address</li><li class="gs-step gs-active">Payment</li><li class="gs-step">Done</li>
+      </ol>
+
+      <h3 class="gs-mt-6 gs-mb-3">Accordion</h3>
+      <div class="gs-accordion">
+        <details class="gs-accordion-item" open>
+          <summary class="gs-accordion-header">What is goStyle?</summary>
+          <div class="gs-accordion-body">A small CSS framework with a numbered utility scale and a soft, modern look.</div>
+        </details>
+        <details class="gs-accordion-item">
+          <summary class="gs-accordion-header">How do I install it?</summary>
+          <div class="gs-accordion-body">Link <span class="gs-code">dist/gostyle.min.css</span> in your page head.</div>
+        </details>
+        <details class="gs-accordion-item">
+          <summary class="gs-accordion-header">Does it need JavaScript?</summary>
+          <div class="gs-accordion-body">Only for modal, tabs, dropdowns, the navbar toggle and toasts.</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ FEEDBACK ============ -->
+    <section id="feedback" class="gs-mb-10">
+      <h2 class="gs-mb-4">Alerts</h2>
+      <div class="gs-alert gs-alert-success"><strong>Saved.</strong> Your changes are live.</div>
+      <div class="gs-alert gs-alert-danger gs-alert-dismissible"><strong>Error.</strong> Something went wrong. <button class="gs-close" data-gs-dismiss="alert">&times;</button></div>
+      <div class="gs-alert gs-alert-warning"><strong>Careful.</strong> Your trial ends in 3 days.</div>
+      <div class="gs-alert gs-alert-info"><strong>Heads up.</strong> A new version is available.</div>
+      <div class="gs-alert gs-alert-primary">A primary alert.</div>
+
+      <h2 class="gs-mb-3 gs-mt-8">Badges &amp; chips</h2>
+      <div class="gs-flex gs-flex-wrap gs-gap-2 gs-mb-3">
+        <span class="gs-badge gs-badge-primary">Primary</span><span class="gs-badge gs-badge-success">Active</span><span class="gs-badge gs-badge-danger">Error</span>
+        <span class="gs-badge gs-badge-warning">Pending</span><span class="gs-badge gs-badge-info">Info</span><span class="gs-badge">Default</span>
+      </div>
+      <div class="gs-flex gs-flex-wrap gs-gap-2 gs-mb-3">
+        <span class="gs-badge gs-badge-primary gs-badge-solid">Solid</span><span class="gs-badge gs-badge-gradient">Gradient</span><span class="gs-badge gs-badge-success gs-badge-plain">No dot</span>
+        <span class="gs-badge gs-badge-danger gs-badge-square">Square</span><span class="gs-badge gs-badge-dark">Dark</span><span class="gs-badge gs-badge-light">Light</span>
+      </div>
+      <div class="gs-flex gs-flex-wrap gs-gap-2">
+        <span class="gs-chip gs-chip-primary">Design <button class="gs-close" aria-label="Remove">&times;</button></span>
+        <span class="gs-chip gs-chip-success">Frontend <button class="gs-close" aria-label="Remove">&times;</button></span>
+        <span class="gs-chip">Plain chip</span>
+      </div>
+
+      <h2 class="gs-mb-3 gs-mt-8">Progress &amp; loaders</h2>
+      <div class="gs-progress"><div class="gs-progress-bar" style="width:70%"></div></div>
+      <div class="gs-progress gs-progress-lg gs-progress-animated"><div class="gs-progress-bar" style="width:55%">55%</div></div>
+      <div class="gs-progress"><div class="gs-progress-bar gs-progress-bar-success" style="width:40%"></div></div>
+      <div class="gs-progress"><div class="gs-progress-bar gs-progress-bar-warning" style="width:25%"></div></div>
+      <div class="gs-flex gs-align-center gs-gap-6 gs-mb-4">
+        <span class="gs-spinner gs-spinner-sm"></span><span class="gs-spinner"></span><span class="gs-spinner gs-spinner-lg"></span>
+        <span class="gs-dots"><i></i><i></i><i></i></span>
+      </div>
+      <div class="gs-card gs-card-body gs-flex gs-gap-4 gs-align-center gs-mb-4">
+        <span class="gs-skeleton gs-skeleton-circle"></span>
+        <div style="flex:1"><span class="gs-skeleton gs-skeleton-text" style="width:50%"></span><span class="gs-skeleton gs-skeleton-text" style="width:85%"></span></div>
+      </div>
+
+      <h2 class="gs-mb-3 gs-mt-8">Avatars, tooltips, toasts</h2>
+      <div class="gs-flex gs-align-center gs-gap-6 gs-flex-wrap gs-mb-4">
+        <span class="gs-avatar gs-avatar-sm">SM</span><span class="gs-avatar gs-avatar-online">AB</span><span class="gs-avatar gs-avatar-lg">LG</span><span class="gs-avatar gs-avatar-xl">XL</span>
+        <span data-gs-tooltip="Variables are for remembering something for later"><button class="gs-btn gs-btn-sm">Hover top</button></span>
+        <span data-gs-tooltip="Short text below" data-gs-tooltip-pos="bottom"><button class="gs-btn gs-btn-sm gs-btn-secondary">Hover bottom</button></span>
+        <span class="gs-tooltip">
+          <button class="gs-btn gs-btn-sm gs-btn-dark">Rich tooltip</button>
+          <span class="gs-tooltip-box" role="tooltip">
+            <span class="gs-tooltip-content">
+              Variables are for remembering something for later
+              <a href="#" class="gs-tooltip-action">Learn More</a>
+            </span>
+          </span>
+        </span>
+      </div>
+      <div class="gs-flex gs-flex-wrap gs-gap-2 gs-mb-6">
+        <button class="gs-btn gs-btn-sm gs-btn-success" data-gs-toggle="toast" data-gs-type="success" data-gs-message="Saved successfully">Success toast</button>
+        <button class="gs-btn gs-btn-sm gs-btn-danger" data-gs-toggle="toast" data-gs-type="danger" data-gs-message="Something went wrong">Error toast</button>
+        <button class="gs-btn gs-btn-sm" data-gs-toggle="toast" data-gs-type="primary" data-gs-message="New message received">Info toast</button>
+      </div>
+
+      <div class="gs-empty gs-mb-6">
+        <span class="gs-empty-icon">&#9733;</span>
+        <h3 class="gs-empty-title">Nothing here yet</h3>
+        <p>Create your first project to get started.</p>
+        <button class="gs-btn gs-btn-sm">New project</button>
+      </div>
+
+      <h2 class="gs-mb-4">Timeline</h2>
+      <ul class="gs-timeline">
+        <li class="gs-timeline-item gs-done"><span class="gs-timeline-time">9:00 AM</span><h4 class="gs-timeline-title">Order placed</h4><p class="gs-timeline-text">We received your order.</p></li>
+        <li class="gs-timeline-item gs-done"><span class="gs-timeline-time">1:30 PM</span><h4 class="gs-timeline-title">Packed</h4><p class="gs-timeline-text">Your items are packed.</p></li>
+        <li class="gs-timeline-item"><span class="gs-timeline-time">Tomorrow</span><h4 class="gs-timeline-title">Delivery</h4><p class="gs-timeline-text">Expected by evening.</p></li>
+      </ul>
+
+      <h2 class="gs-mb-3 gs-mt-8">Modal</h2>
+      <button class="gs-btn" data-gs-toggle="modal" data-gs-target="#demoModal">Open modal</button>
+    </section>
+
+  </div>
+
+  <!-- ============ MODAL ============ -->
+  <div class="gs-modal" id="demoModal" aria-hidden="true">
+    <div class="gs-modal-dialog">
+      <div class="gs-modal-header">
+        <h3 class="gs-modal-title">Confirm action</h3>
+        <button class="gs-close" data-gs-dismiss="modal" aria-label="Close">&times;</button>
+      </div>
+      <div class="gs-modal-body"><p>Are you sure you want to continue? This action can be undone later.</p></div>
+      <div class="gs-modal-footer">
+        <button class="gs-btn-outline gs-btn-secondary" data-gs-dismiss="modal">Cancel</button>
+        <button class="gs-btn gs-btn-success" data-gs-dismiss="modal">Yes, continue</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="dist/gostyle.min.js"></script>
+</body>
+</html>

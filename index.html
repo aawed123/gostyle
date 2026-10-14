@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>goStyle Demo</title>
+  <link rel="stylesheet" href="dist/gostyle.min.css">
+</head>
+<body>
+  <div class="gs-container gs-p-6">
+    <h1>goStyle</h1>
+    <p>A lightweight CSS framework.</p>
+
+    <h2 class="gs-mt-6 gs-mb-2">Buttons</h2>
+    <button class="gs-btn">Primary</button>
+    <button class="gs-btn gs-btn-secondary">Secondary</button>
+    <button class="gs-btn gs-btn-success">Success</button>
+    <button class="gs-btn gs-btn-danger">Danger</button>
+
+    <h2 class="gs-mt-6 gs-mb-2">Outline Buttons</h2>
+    <button class="gs-btn-outline">Primary</button>
+    <button class="gs-btn-outline gs-btn-secondary">Secondary</button>
+    <button class="gs-btn-outline gs-btn-success">Success</button>
+    <button class="gs-btn-outline gs-btn-danger">Danger</button>
+
+    <h2 class="gs-mt-6 gs-mb-2">Cards in a grid</h2>
+    <div class="gs-row">
+      <div class="gs-col-md-4"><div class="gs-card"><div class="gs-card-body"><h3 class="gs-card-title">Card 1</h3><p>Some content.</p></div></div></div>
+      <div class="gs-col-md-4"><div class="gs-card"><div class="gs-card-body"><h3 class="gs-card-title">Card 2</h3><p>Some content.</p></div></div></div>
+      <div class="gs-col-md-4"><div class="gs-card"><div class="gs-card-body"><h3 class="gs-card-title">Card 3</h3><p>Some content.</p></div></div></div>
+    </div>
+
+    <h2 class="gs-mt-6 gs-mb-2">Utilities (numbered scale)</h2>
+    <div class="gs-flex gs-gap-3 gs-flex-wrap">
+      <div class="gs-p-2 gs-b-radius-1" style="background:#e0e7ff">b-radius-1 (4px)</div>
+      <div class="gs-p-3 gs-b-radius-2" style="background:#e0e7ff">b-radius-2 (8px)</div>
+      <div class="gs-p-4 gs-b-radius-3" style="background:#e0e7ff">b-radius-3 (12px)</div>
+      <div class="gs-p-5 gs-b-radius-5" style="background:#e0e7ff">b-radius-5 (20px)</div>
+      <div class="gs-p-4 gs-b-radius-full" style="background:#e0e7ff">full</div>
+    </div>
+  </div>
+</body>
+</html>

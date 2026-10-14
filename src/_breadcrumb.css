@@ -1,0 +1,15 @@
+.gs-breadcrumb {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 0 1rem;
+  padding: .4rem 1rem;
+  list-style: none;
+  font-size: .85rem;
+  background: #f1f3fb;
+  border-radius: 9999px;
+}
+.gs-breadcrumb-item + .gs-breadcrumb-item::before { content: "\203A"; padding: 0 .55rem; font-size: 1.1rem; line-height: 1; color: #a7b0c2; }
+.gs-breadcrumb-item a { color: #64748b; text-decoration: none; transition: color .2s ease; }
+.gs-breadcrumb-item a:hover { color: var(--gs-primary); }
+.gs-breadcrumb-item.gs-active { font-weight: 600; color: var(--gs-dark); }
